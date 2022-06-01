@@ -43,6 +43,9 @@ const createProductRow = (product) => {
   const elProductMalu = elProductRow.querySelector(".malumot")
   elProductMalu.textContent = product.benefits[2];
 
+  const elDeleteBtn = elProductRow.querySelector(".btn-danger");
+  elDeleteBtn.dataset.id = product.id;
+
 
  return elProductRow;
 
@@ -102,6 +105,7 @@ elProductList.addEventListener("click", (evt) => {
     const clickedBtnId = +evt.target.dataset.id;
     const clickedBtnIndex = products.findIndex((product) => {
       return product.id === clickedBtnId;
+
     });
     products.splice(clickedBtnIndex, 1)
 
